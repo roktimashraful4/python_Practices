@@ -6,7 +6,6 @@
 # default arguments
 # required arguments
 # arguments keywords
-# 
 
 
 def sum_of_sum(number1,number2=3): #default arguments
