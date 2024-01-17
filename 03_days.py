@@ -9,20 +9,22 @@ def cart(a):
     print("======== end of list")
 
 
-def total(number):
-    pass
+def total(*number):
+    sum = 0 
+    for i in number:
+        sum = sum +i 
+    print(sum)
     
 
 
 total(2,4,5,23,28) # ami cai je ei sob number er total value jeno print korbe 62
 
 
-cart('mango','carat', 'rice')
+# cart('mango','carat', 'rice')
 
-cart('mango','watermelon')
+# cart('mango','watermelon')
 
-cart()
-
+# cart()
 
 
 # my_function("Hello", "hi", "how are you")
