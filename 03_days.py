@@ -16,7 +16,6 @@ def total(*number):
     print(sum)
     
 
-
 total(2,4,5,23,28) # ami cai je ei sob number er total value jeno print korbe 62
 
 
