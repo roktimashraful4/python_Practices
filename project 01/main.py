@@ -1,4 +1,5 @@
 from sys import exit
+from datetime import datetime
 users =[]
 
 # user sign up function
@@ -10,7 +11,8 @@ def signUp():
     user = {
         'name': name,
         'email': email,
-        'password': password
+        'password': password,
+        'country': "bangladesh"
     }
     # check user in users if user already exist then print a error message otherwise create a user 
     for i in users:
@@ -38,9 +40,66 @@ def signUp():
         welcome()
 
 
+def dashboard(username, email):
+    print("Hello !! "+ username )
+    print("Your email is : "+ email)
+
 # user login function
 def login():
-    print("this is login function")
+    email = str(input("enter your email:"))
+    password = str(input("enter your password:"))
+    
+    for user in users:
+        if user['email'] == email and user['password'] == password:
+            print("Login Successful")
+            dashboard(user['name'], user['email'])
+            return
+        else:
+            print("Login Failed")
+            print('try agin with correct information.')
+            print("==== Select your options ======= ")
+            print('=================================')
+            print("0. Try Agin")
+            print("1. Main Menu")
+            print("2. Sign Up")
+            print("3. Exit")
+            option = int(input("Enter a number: "))
+            if option == 1: 
+                welcome()
+            elif option == 0:
+                login()
+            elif option == 2:
+                signUp()
+            elif option == 3:
+                myExit()
+            else:
+                print("Invalid option")
+                welcome()
+    print("Login Failed")
+    print('try agin with correct information.')
+    print("Login Failed")
+    print('try agin with correct information.')
+    print("==== Select your options ======= ")
+    print('=================================')
+    print("0. Try Agin")
+    print("1. Main Menu")
+    print("2. Sign Up")
+    print("3. Exit")
+    option = int(input("Enter a number: "))
+    if option == 1: 
+        welcome()
+    elif option == 0:
+        login()
+    elif option == 2:
+        signUp()
+    elif option == 3:
+        myExit()
+    else:
+        print("Invalid option")
+        welcome()
+    
+
+
 
 # withdraw balance function 
 def withdraw():
@@ -60,9 +119,11 @@ def myExit():
     exit()
 # welcome function 
 def welcome():
-    print('===== welcome to  ABC bank ===== ')
+    print(datetime.now())
+    hour = datetime.now().hour
+    print('===== welcome to  ABC bank =====')
     print('================================')
-    print("==== Select your options ======= ")
+    print("==== Select your options =======")
     print('=================================')
     print("1. Sign up")
     print("2. Login")
@@ -77,6 +138,5 @@ def welcome():
     else:
         print("Invalid option")
         welcome()
-
 
 welcome()
